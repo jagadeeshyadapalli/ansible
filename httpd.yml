@@ -1,0 +1,9 @@
+---
+
+- name: install httpd in localhost
+  hosts: localhost
+  tasks:
+   - name: inatall pkg
+     yum:
+      name: httpd
+      status: latest 

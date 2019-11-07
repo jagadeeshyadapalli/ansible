@@ -1,0 +1,25 @@
+--- 
+- name: copy auditbeat.yml
+  hosts: all
+  become: yes
+  tasks:
+    - name: coy config file
+      copy: 
+        src: /etc/auditbeat/auditbeat.yml
+        dest: /etc/auditbeat/
+    - name:
+      service:
+        name: auditbeat
+        state: restarted
+        enabled: yes
+    - name: copy filebeat file
+      copy:
+        src: /etc/filebeat/filebeat.yml
+        dest: /etc/filebeat/
+    - name: restart filebeat 
+      service:
+        name: filebeat
+        state: restarted
+        enabled: yes
+      register: out
+    - debug: var=out

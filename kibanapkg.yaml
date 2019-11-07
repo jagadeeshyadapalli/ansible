@@ -1,0 +1,45 @@
+---
+- name: kibana client package installation
+  hosts: all
+  become: yes
+  tasks:
+    - name: copy the package
+      copy:
+      
+         src:  /root/auditbeat-7.4.1-x86_64.rpm 
+         dest: /root
+    - name: copy filebeat package
+      copy: 
+         src: /root/filebeat-7.4.1-x86_64.rpm
+         dest: /root
+    - name: install filebeat package
+      yum:
+        name: /root/filebeat-7.4.1-x86_64.rpm
+        state: present
+    
+    - name: start filebeat modules
+      command: filebeat modules enable system
+     
+    
+      
+    - name: start filebeat service
+      service:
+      
+         name: filebeat
+         state: started
+         
+
+    - name: install adudit beat package  
+      yum: 
+         name: /root/auditbeat-7.4.1-x86_64.rpm
+         state: present
+    - name: start the auditbeat service
+      service: 
+        name: auditbeat
+        state: started
+      register: out
+    - debug: var=out
+
+
+
+

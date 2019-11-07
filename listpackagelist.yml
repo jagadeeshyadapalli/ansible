@@ -1,0 +1,10 @@
+---
+
+- name: list instllaed packages
+  hosts: test-servers
+  tasks:
+   - name: list instllaed following packages
+     yum: list=filebeat
+     register: out_one
+   - debug: var=out_one
+      

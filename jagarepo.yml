@@ -1,0 +1,18 @@
+---
+- name: localrepofor ansi server
+  hosts: localhost
+  tasks:
+    - name: local
+      yum_repository:
+           name: rhel7.6
+           description: repoforlocalhost
+           baseurl: file:///root/Desktop/cent/CentOS-7-x86_64
+           enabled: yes
+           gpgcheck: no
+           name: localrepousingansi
+    - name: run the command
+      command: createrepo -v  /root/Desktop/cent/CentOS-7-x86_64 
+     
+         
+       
+      

@@ -1,0 +1,13 @@
+---
+- name: create dir or file
+  hosts: test-servers
+#  become: yes
+  tasks:
+#    - name: create folder
+#      command: rmdir  /root/Desktop/hello
+#    - name: create file
+#      command: touch  /root/Desktop/cheli
+    - name: create folder
+      command: mkdir /root/Desktop/hari
+      register: out
+    - debug: var=out  

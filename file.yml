@@ -1,0 +1,12 @@
+---
+- name: create file particular directory
+  hosts: test-servers
+  tasks:
+   - name: create directiory and file
+     file:
+       path: /root/hari/{{item}}
+       state: directory
+     with_items:
+         - hello
+         - oye
+         - chinna.txt

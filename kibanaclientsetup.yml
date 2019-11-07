@@ -1,0 +1,11 @@
+---
+- name: kibana kibana client setup
+  hosts: all
+  
+
+
+- import_playbook: kibanapkg.yaml
+- import_playbook: kibanapkgconfig.yml
+
+
+

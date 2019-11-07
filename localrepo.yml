@@ -1,0 +1,14 @@
+---
+
+- name: repo for remote servers
+  hosts: test-servers
+  tasks:
+    - name: add repository
+      yum_repository:
+         name: cent7.6
+         description: cent 7 repository
+         baseurl: file:///root/Desktop/CentOS-7-x86_64/
+         gpgcheck: 0
+         enabled: yes
+    - name: command to execute
+      command: createrepo -v /root/Desktop/CentOS-7-x86_64 

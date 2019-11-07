@@ -1,0 +1,11 @@
+---
+- name: insert line
+  hosts: localhost
+  tasks:
+
+    - name: insertline afterhost
+      replace:
+         path: /root/Desktop/ani/hello.txt
+         regexp: '#host: "localhost:5601"'
+         replace: "host: 172.30.253.344"
+

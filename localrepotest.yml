@@ -1,0 +1,15 @@
+---
+- name: local repository
+  hosts: test-servers
+  tasks:
+    - name: local repository ceation
+      yum_repository:
+        name: centos7.6
+        description: local repository by ansible
+        baseurl: file:///root/Desktop/CentOS-7-x86_64/
+        enabled: yes
+        gpgcheck: 0
+        name: reposit
+    - name: command to be executed for local repo
+      command: createrepo -v /root/Desktop/CentOS-7-x86_64/
+

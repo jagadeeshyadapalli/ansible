@@ -1,0 +1,24 @@
+---
+- name: insert new line under the kibana
+  hosts: all
+  become: yes
+  tasks:
+   - name: insert the line
+     lineinfile:
+        path: /etc/auditbeat/auditbeat.yml
+        regexp: '^#host='
+        line: ' host: "172.30.253.134:5601" '
+        line: ' hosts: ["172.30.253.131:9200","172.30.253.132:9200"] '
+        state: absent
+     
+   - name: restart the auditbeat
+     service:
+       name: auditbeat
+       state: restarted
+     register: out
+   - debug: var=out
+
+
+
+
+

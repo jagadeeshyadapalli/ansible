@@ -1,0 +1,5 @@
+---
+- name: to run in two books on one host
+  hosts: test-servers
+- import_playbook: createdir.yml
+- import_playbook: createfile.yml

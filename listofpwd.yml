@@ -1,0 +1,13 @@
+---
+- name: list of files in working directory
+  hosts: test-servers
+  tasks:
+  
+   - name: listoffiles
+     find:
+       paths: /root/Desktop
+     command: ls
+       
+       
+     register: out
+   - debug: var=out

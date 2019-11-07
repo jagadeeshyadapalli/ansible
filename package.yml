@@ -1,0 +1,21 @@
+---
+- name: ansible play book for to install package
+  hosts: all
+  become: yes
+  tasks:
+   - name: copy file from ani srv to destination
+     copy:
+      src: /root/filebeat-7.4.1-x86_64.rpm
+      dest: /root/
+   - name: install filebeat
+     yum: 
+      name: /root/filebeat-7.4.1-x86_64.rpm
+      state: present
+        
+
+   - name: start the service
+     service:
+       name: filebeat
+       state: started
+     register: out
+   - debug: var=out

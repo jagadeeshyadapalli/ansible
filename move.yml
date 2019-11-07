@@ -1,0 +1,11 @@
+---
+- name: moveing files
+  hosts: localhost
+  tasks:
+   - name: moving files
+     command: mv /etc/yum.repos.d/hello  /etc/yum.repos.d/reposs
+
+
+
+
+

@@ -1,0 +1,9 @@
+---
+- name: create file in ansible hosts
+
+  hosts: test-servers
+#  become: yes
+  tasks:
+
+    - name: to create file
+      command: touch /root/Desktop/testingfile
