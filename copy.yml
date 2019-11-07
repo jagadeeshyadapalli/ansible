@@ -1,0 +1,16 @@
+---
+
+- hosts: test-servers
+ 
+  tasks:
+     - name: copy files
+       copy: 
+          src: /root/Desktop/cent/ 
+          dest: /root/Desktop/
+
+
+
+
+
+
+
