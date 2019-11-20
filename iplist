@@ -1,0 +1,6 @@
+
+#172.30.253.73 ansible_ssh_user=root ansible_ssh_pass=1strac@2018
+#172.30.253.52 ansible_ssh_user=root ansible_ssh_pass=1strac@2018
+172.30.253.84 ansible_ssh_user=root ansible_ssh_pass=1strac@2018
+172.30.253.85 ansible_ssh_user=root ansible_ssh_pass=1strac@2018
+

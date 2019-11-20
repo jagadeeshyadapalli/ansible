@@ -1,0 +1,15 @@
+---
+- name: copy the files using synchronize
+  hosts: test-servers
+  tasks:
+   - name: synchronize module
+     synchronize:
+        src: /root/Desktop/ani
+        dest: /root/Desktop
+    
+     register: out
+   - debug: var=out
+    
+
+
+

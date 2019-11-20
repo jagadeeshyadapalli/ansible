@@ -1,0 +1,9 @@
+---
+- name: remove files
+  hosts: test-servers
+  tasks:
+   - name: file removal
+     file:
+      path: /root/Desktop/hari
+      state: absent
+  
